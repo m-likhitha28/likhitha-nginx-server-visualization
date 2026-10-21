@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NGINXFLIX · served by NGINX</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#141414;color:#fff;font:16px/1.5 "Segoe UI",Arial,sans-serif}
+nav{position:fixed;top:0;left:0;right:0;display:flex;gap:20px;align-items:center;padding:16px 4%;background:linear-gradient(#000c,transparent);z-index:5}
+.logo{color:#e50914;font-weight:900;letter-spacing:3px;font-size:24px}nav a{color:#ddd;font-size:14px}nav button{margin-left:auto;background:#e50914;border:0;color:#fff;padding:7px 16px;border-radius:4px;cursor:pointer}
+.hero{min-height:75vh;padding:150px 4% 60px;background:linear-gradient(90deg,#000e,#0000 70%),linear-gradient(0deg,#141414,#0000 35%),radial-gradient(circle at 80% 30%,#7a0810,#1d0507 60%)}
+.hero h1{font-size:clamp(32px,6vw,64px);line-height:1.05;max-width:620px;margin:0 0 12px}.hero p{max-width:480px;color:#ddd}
+.hero button{border:0;padding:10px 24px;margin-right:10px;font-weight:700;border-radius:4px;cursor:pointer}.p{background:#fff}.i{background:#6d6d6eb3;color:#fff}
+h2{margin:20px 4% 8px;font-size:20px}.row{display:flex;gap:10px;padding:10px 4%;overflow-x:auto}
+.card{flex:none;width:170px;height:250px;border-radius:6px;padding:12px;display:flex;align-items:flex-end;font-weight:800;cursor:pointer;transition:transform .25s}.card:hover{transform:scale(1.12)}
+footer{padding:30px 4%;color:#888;font-size:13px}
+</style></head><body>
+<nav><span class="logo">NGINXFLIX</span><a>Home</a><a>Series</a><a>Films</a><a>My List</a><button>Sign in</button></nav>
+<section class="hero"><h1>Unlimited demos, servers and clouds.</h1><p>Watch anywhere. This page is served by NGINX on Amazon Linux 2023.</p><button class="p">▶ Play</button><button class="i">ⓘ More info</button></section>
+<h2>Trending now</h2><div class="row" id="r1"></div>
+<h2>Because you studied AWS</h2><div class="row" id="r2"></div>
+<footer>Original demo page. Not affiliated with Netflix. #Buildwithvinit</footer>
+<script>
+var T=["Midnight Circuit","Red Horizon","The Last Server","Cloud Runners","Packet Storm","Port 80","Silent Subnet","Edge Case","Zero Downtime","Cold Start"];
+["r1","r2"].forEach(function(id,r){for(var k=0;k<8;k++){var n=(r*4+k)%T.length,h=(n*47+350)%360,d=document.createElement("div");d.className="card";d.style.background="linear-gradient(160deg,hsl("+h+",70%,38%),hsl("+(h+40)%360+",60%,10%))";d.textContent=T[n];document.getElementById(id).appendChild(d)}});
+</script></body></html>

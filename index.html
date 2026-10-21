@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nginx Server visual · #Buildwithvinit</title>
+<meta name="description" content="Animated, beginner-friendly guide to how NGINX serves a website from an AWS EC2 instance.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><img src="assets/logo.svg" alt="" width="32" height="32"><div><b>Nginx Server visual</b><small>#Buildwithvinit</small></div></div>
+  <div class="ctl">
+    <button id="prev" title="Previous step" aria-label="Previous step">‹</button>
+    <button id="play" class="primary">Pause</button>
+    <button id="next" title="Next step" aria-label="Next step">›</button>
+    <button id="reset">Reset</button>
+    <button id="theme" aria-label="Toggle dark or light mode">☾</button>
+  </div>
+  <div class="bar"><i id="bar"></i></div>
+</header>
+
+<div class="layout">
+  <aside><ol id="steps" aria-label="Steps"></ol></aside>
+  <main>
+    <section class="card diagram" aria-label="Infrastructure diagram">
+      <svg id="svg" viewBox="0 0 900 360" role="img" aria-label="Request path from browser to NGINX on EC2"></svg>
+    </section>
+    <div class="two">
+      <section class="card caption" id="caption" aria-live="polite"></section>
+      <section class="card browser" aria-label="Website preview">
+        <div class="chrome"><span class="dots"><i></i><i></i><i></i></span><div class="url" id="url"></div></div>
+        <div class="screen" id="screen" data-state="down">
+          <div class="msg" id="msg"></div>
+          <div class="site" id="site">
+            <nav><span class="logo">NGINXFLIX</span><a>Home</a><a>Series</a><a>Films</a><a>My List</a><button>Sign in</button></nav>
+            <div class="hero"><h2>Unlimited demos, servers and clouds.</h2><p>Watch anywhere. Served by NGINX on Amazon Linux 2023.</p><div><button class="play">▶ Play</button><button class="info">ⓘ More info</button></div></div>
+            <h3>Trending now</h3><div class="row" id="row1"></div>
+            <h3>Because you studied AWS</h3><div class="row" id="row2"></div>
+          </div>
+        </div>
+        <p class="disc">Original, unofficial demo. Not affiliated with Netflix.</p>
+      </section>
+    </div>
+  </main>
+</div>
+<footer>#Buildwithvinit · MIT License · Educational project, not affiliated with Netflix or AWS.</footer>
+<script src="js/app.js"></script>
+</body>
+</html>
